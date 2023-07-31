@@ -1,0 +1,143 @@
+aside {
+    width: auto;
+    height: auto;
+
+    .toTop {
+        width: 60px;
+        height: 60px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $linear_1;
+        border: solid 2px $second_1;
+        position: fixed;
+        top: 630px;
+        right: 0px;
+        z-index: 999;
+        cursor: pointer;
+
+        i {
+            width: 24px;
+            height: 22px;
+        }
+    }
+
+
+    nav {
+        width: auto;
+        height: auto;
+
+        &.left_ic {
+            position: fixed;
+            top: 300px;
+            left: 0px;
+            z-index: 999;
+
+            .download {
+                width: 75px;
+                height: 150px;
+                @include aside_1;
+                border-radius: 0 100px 100px 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 0 15px 0 0;
+
+                P {
+                    font-size: 21PX;
+                    font-weight: bold;
+                    color: $sixth_1;
+                    writing-mode: vertical-lr;
+                    letter-spacing: 3px;
+                }
+            }
+
+            .download_ic {
+                width: 50px;
+                height: 50px;
+                @include aside_1;
+                border-radius: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 105px;
+                left: 43px;
+                z-index: 999;
+                cursor: pointer;
+
+                i {
+                    width: 25px;
+                    height: 25px;
+                }
+            }
+        }
+
+        &.rightIc {
+            position: fixed;
+            top: 250px;
+            right: 0px;
+            z-index: 999;
+
+            a {
+                width: 45px;
+                height: 80px;
+                @include aside_1;
+                border-radius: 100px 0 0 100px;
+
+                &::before {
+                    content: "";
+                    width: 40px;
+                    height: 40px;
+                    background: url("../img/aside_r.png") no-repeat center;
+                    background-size: 300%;
+                    position: absolute;
+                    top: 50%;
+                    left: 4px;
+                    transform: translateY(-50%);
+                }
+
+                &:nth-of-type(1) {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+
+                    &::before {
+                        background-position-x: 0%;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    position: absolute;
+                    top: 85px;
+                    right: 0;
+
+                    &::before {
+                        background-position-x: 50%;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    position: absolute;
+                    top: 170px;
+                    right: 0;
+
+                    &::before {
+                        background-position-x: 100%;
+                    }
+                }
+
+                &:hover,
+                &:active,
+                &.active {
+                    background: $linear_2 ;
+                }
+            }
+        }
+    }
+
+}

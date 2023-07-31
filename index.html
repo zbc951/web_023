@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- swiper csd -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!-- swiper js  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- vue3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="topArea">
+            <div class="centerArea">
+                <ul>
+                    <li>
+                        <form action="">
+                            <label for="">
+                                <input type="text" placeholder="帳號">
+                            </label>
+                            <label for="">
+                                <input type="password" placeholder="密碼">
+                            </label>
+                            <button type="button" class="signinBtn">
+                                <p>登入</p>
+                            </button>
+                            <button type="button" class="signupBtn">
+                                <p>註冊</p>
+                            </button>
+                        </form>
+                    </li>
+                    <li class="forgetBtn">
+                        <a href="#">
+                            <p>忘記密碼 ?</p>
+                        </a>
+                    </li>
+                    <li class="languageList">
+                        <label for="">
+                            <select name="" id="">
+                                <option value="">繁體中文</option>
+                                <option value="">简体中文</option>
+                                <option value="">ENGLISH</option>
+                                <option value="">日本語</option>
+                            </select>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="underTopArea">
+            <div class="centerArea">
+                <div class="logo">
+                    <img src="./img/header_logo.png" alt="">
+                </div>
+                <ul class="menu">
+                    <li v-for="(li,index) in lis" :key="index" :class="{ active: li.active }"
+                        @mouseover="showBottomArea(index)" @mouseout="hideAll()">
+                        <a href="#">
+                            <p>{{ li.text }}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottomArea" :class="{ display: bottomAreaDisplay }" @mouseover="showUlArea()"
+            @mouseleave="hideBottomArea">
+            <div class="listArea">
+                <i class="arrow_ic prev" @click="clicPrev"></i>
+                <ul v-for="(ulClass, index) in ulClasses" :key="index"
+                    :class="{ [ulClass]: true ,  display: bottomAreaULIndex === index }">
+                    <ol>
+                        <li v-for="(item, itemIndex) in bottomAreaItems[index]" :key="itemIndex">
+                            <a href="#">
+                                <div>
+                                    <img :src="item.imgSrc" alt="">
+                                </div>
+                                <p>{{ item.text }}</p>
+                            </a>
+                        </li>
+                    </ol>
+                </ul>
+                <i class="arrow_ic next" @click="clickNext"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- swiper -->
+        <section class="swiper-banner">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="girl"></div>
+                        <div class="poker"></div>
+                        <div class="slogan"></div>
+                        <div class="money_left"></div>
+                        <div class="money_right"></div>
+                        <div class="swirl"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="girl"></div>
+                        <div class="poker"></div>
+                        <div class="slogan"></div>
+                        <div class="money_left"></div>
+                        <div class="money_right"></div>
+                        <div class="swirl"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="img">
+                        <div class="girl"></div>
+                        <div class="poker"></div>
+                        <div class="slogan"></div>
+                        <div class="money_left"></div>
+                        <div class="money_right"></div>
+                        <div class="swirl"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </section>
+        <!-- marquee -->
+        <div class="marqueeArea">
+            <div class="marqueeTitle">
+                <i></i>
+            </div>
+            <div class="marqueeTextBox">
+                <p>跑馬燈啊啊啊啊啊~~~~啊啊啊~~~~啊啊啊斯~~~~</p>
+            </div>
+        </div>
+        <!-- grid -->
+        <div class="gridArea">
+            <ul>
+                <li>
+                    <div class="gameSelect">
+                        <div class="trigger"></div>
+                        <img src="./img/live_1.png" alt="" class="live_1">
+                    </div>
+                    <p>AA真人娛樂</p>
+                </li>
+                <li>
+                    <div class="gameSelect">
+                        <div class="trigger"></div>
+                        <img src="./img/live_2.png" alt="" class="live_2">
+                    </div>
+                    <p>SS真人娛樂</p>
+                </li>
+                <li>
+                    <div class="gameSelect">
+                        <div class="trigger"></div>
+                        <img src="./img/slot_1.png" alt="" class="slot_1">
+                    </div>
+                    <p>BBB老虎機</p>
+                </li>
+                <li>
+                    <div class="gameSelect">
+                        <div class="trigger"></div>
+                        <img src="./img/slot_2.png" alt="" class="slot_2">
+                    </div>
+                    <p>CCC老虎機</p>
+                </li>
+                <li>
+                    <div class="gameSelect">
+                        <div class="trigger"></div>
+                        <img src="./img/board_1.png" alt="" class="board_1">
+                        <img src="./img/board_2.png" alt="" class="board_2">
+                    </div>
+                    <p>ABC棋牌遊戲</p>
+                </li>
+                <li>
+                    <div class="gameSelect">
+                        <div class="trigger"></div>
+                        <img src="./img/lottery_1.png" alt="" class="lottery_1">
+                    </div>
+                    <p>ABC彩票</p>
+                </li>
+                <li>
+                    <div class="gameSelect">
+                        <div class="trigger"></div>
+                        <img src="./img/sport_1.png" alt="" class="sport_1">
+                        <img src="./img/sport_2.png" alt="" class="sport_2">
+                    </div>
+                    <p>ABC體育</p>
+                </li>
+                <li>
+                    <div class="gameSelect">
+                        <div class="trigger"></div>
+                        <img src="./img/fish.png" alt="" class="fish_1">
+                    </div>
+                    <p>TT捕魚機</p>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <div class="upperHalf">
+            <div class="upperHalfCenter">
+                <ul>
+                    <li v-for="(li , index) in lis" :key="index" :class="{ active: li.active }"
+                        @click="toggleActive(index)">
+                        <a href="#1" name="#1">
+                            <p>{{ li.text }}</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <p>
+                        2021 AU8GAMING.COM
+                    </p>
+                </ul>
+            </div>
+        </div>
+        <div class="lowerHalf">
+            <div class="lowerHalfCenter">
+                <p>致力於成為世界頂級的在線娛樂公司。因此，在處理任何事情的時候，都會修先考慮客戶的利益。客戶的最大滿意就是我們的成功。</p>
+                <p>提供全天候24小時的在線客服，提供專業化和人性化相結合的最佳服務。</p>
+            </div>
+        </div>
+    </footer>
+    <aside>
+        <div class="toTop" v-if="showToTop" @click="scrollToTop">
+            <i></i>
+        </div>
+        <nav class="left_ic">
+            <div class="download">
+                <p>手機下載</p>
+            </div>
+            <a href="#" class="download_ic">
+                <i></i>
+            </a>
+        </nav>
+        <nav class="rightIc">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </nav>
+    </aside>
+    <div class="bg"></div>
+</body>
+<!-- js -->
+<script src="./js/javascript.js"></script>
+
+</html>

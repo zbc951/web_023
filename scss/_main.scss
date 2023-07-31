@@ -1,0 +1,494 @@
+main {
+    width: 100%;
+    height: auto;
+    padding: 120px 0 30px 0;
+
+    .swiper-banner {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        .swiper-wrapper {
+            .swiper-slide {
+                position: relative;
+
+                .img {
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 25.521%;
+                    position: relative;
+                    overflow: hidden;
+
+                    div {
+                        width: 100%;
+                        height: auto;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        padding-bottom: 25.521%;
+
+                        // 測transform orign 用
+                        // &::before {
+                        //     content: "";
+                        //     width: 20px;
+                        //     height: 20px;
+                        //     background: red;
+                        //     position: absolute;
+                        //     top: 0;
+                        //     left: 0;
+                        // }
+                    }
+                }
+
+                &.swiper-slide-active {
+                    .img {
+                        div {
+                            &.girl {
+                                animation: girl 0.8s linear 1.1s, delay_active 1.2s linear 0s;
+
+                                @keyframes girl {
+                                    0% {
+                                        opacity: 0;
+                                    }
+
+                                    100% {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+
+                            &.poker {
+                                animation: poker 0.5s ease-in-out 1.7s, delay_active 1.7s linear 0s;
+                                transform-origin: 863px 169px;
+
+                                @keyframes poker {
+                                    0% {
+                                        opacity: 0;
+                                        transform: scale(0);
+                                    }
+
+                                    100% {
+                                        opacity: 1;
+                                        transform: scale(1);
+                                    }
+                                }
+                            }
+
+                            &.slogan {
+                                animation: slogan 0.9s ease-in-out 1.9s, delay_active 1.9s linear 0s;
+                                transform-origin: 1239px 214px;
+
+                                @keyframes slogan {
+                                    0% {
+                                        opacity: 0;
+                                        transform: translateX(50%) scaleX(0.5);
+                                    }
+
+                                    100% {
+                                        opacity: 1;
+                                        transform: translateX(0);
+                                    }
+                                }
+                            }
+
+                            &.money_left {
+                                animation: money_left 2.5s ease-in-out 1.9s, delay_active 1.9s linear 0s;
+
+                                @keyframes money_left {
+                                    0% {
+                                        opacity: 0;
+                                    }
+
+                                    100% {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+
+                            &.money_right {
+                                animation: money_right 2.5s ease-in-out 2.1s, delay_active 2.1s linear 0s;
+
+                                @keyframes money_right {
+                                    0% {
+                                        opacity: 0;
+                                    }
+
+                                    100% {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+
+                            &.swirl {
+                                animation: swirl 0.9s ease-in-out 0.3s;
+                                opacity: 0;
+                                transform-origin: 655px 233px;
+
+                                @keyframes swirl {
+                                    0% {
+                                        opacity: 0.3;
+                                        transform-origin: 647px 223px;
+                                        transform: rotate(360deg) scale(0.7);
+                                    }
+
+                                    100% {
+                                        opacity: 1;
+                                        transform-origin: 647px 223px;
+                                        transform: rotate(0deg) scale(1);
+                                    }
+                                }
+                            }
+
+                            @keyframes delay_active {
+                                0% {
+                                    opacity: 0;
+                                }
+
+                                100% {
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            width: 15%;
+            height: 100%;
+            top: 0;
+            margin: 0;
+            opacity: 0.5;
+
+            &:hover,
+            &:active,
+            &.active {
+                opacity: 1;
+            }
+
+            &::before {
+                content: "";
+            }
+
+            &::after {
+                content: "";
+                width: 15px;
+                height: 15px;
+                border-style: solid;
+                border-width: 8px 8px 0 0;
+                border-color: $main_2 $main_2 transparent transparent;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+
+        .swiper-button-prev {
+            left: 0;
+            right: unset;
+            transform: scaleX(-1);
+        }
+
+        .swiper-button-next {
+            right: 0;
+            left: unset;
+        }
+
+        .swiper-pagination {
+
+            span {
+                width: 28px;
+                height: 17px;
+                border-radius: 30px 30px 0 0;
+                border: none;
+                background: $main_2;
+                opacity: 1;
+
+                &:hover,
+                &:active,
+                &.swiper-pagination-bullet-active {
+                    background: $seventh_1;
+                }
+            }
+
+        }
+
+        .swiper-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+            bottom: 20px;
+        }
+    }
+
+    .marqueeArea {
+        width: 1300px;
+        height: 35px;
+        @include marquee_1;
+        display: flex;
+        align-items: center;
+        margin: 25px auto 55px;
+        padding: 0 20px;
+
+        .marqueeTitle {
+            width: 33px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            i {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        .marqueeTextBox {
+            width: 100%;
+            height: 100%;
+            @include marquee_2;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+
+            p {
+                font-size: 17px;
+                color: $main_2;
+                display: inline-block;
+                padding-left: 100%;
+                white-space: nowrap;
+                animation: marqueeMove 15s linear 0s infinite;
+            }
+
+            @keyframes marqueeMove {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+
+    .gridArea {
+        width: 1400px;
+        height: auto;
+        margin: 0 auto;
+
+        ul {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px 0;
+
+
+            li {
+                width: 300px;
+                height: auto;
+
+                .gameSelect {
+                    width: 100%;
+                    height: 300px;
+                    position: relative;
+
+
+                    img {
+                        width: auto;
+                        height: auto;
+                        object-fit: contain;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    .trigger {
+                        width: 220px;
+                        height: 329px;
+                        border-radius: 300px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                        z-index: 5;
+                        cursor: pointer;
+
+                        &:hover,
+                        &:active,
+                        &.active {
+                            ~img {
+                                &.live_1 {
+                                    animation: move 1.3s ease-in-out 0s infinite;
+                                }
+
+                                &.live_2 {
+                                    animation: move 1.3s ease-in-out 0s infinite;
+                                }
+
+                                &.slot_1 {
+                                    animation: move 1.3s ease-in-out 0s infinite;
+                                }
+
+                                &.slot_2 {
+                                    animation: move 1.3s ease-in-out 0s infinite;
+                                }
+
+                                &.board_1 {
+                                    animation: move 1.3s ease-in-out 0s infinite;
+                                }
+
+                                &.board_2 {
+                                    animation: rotate 1.3s ease-in-out 0s infinite;
+
+                                    @keyframes rotate {
+                                        0% {
+                                            transform: rotate(0);
+                                        }
+
+                                        100% {
+                                            transform: rotate(360deg);
+                                        }
+                                    }
+                                }
+
+                                &.lottery_1 {
+                                    animation: move 1.3s ease-in-out 0s infinite;
+                                }
+
+                                &.sport_1 {
+                                    animation: move 1.3s ease-in-out 0s infinite;
+                                }
+
+                                &.sport_2 {
+                                    animation: move 1.3s ease-in-out 0.2s infinite reverse;
+                                }
+
+                                &.fish_1 {
+                                    animation: move 1.3s ease-in-out 0.2s infinite;
+                                }
+
+                                @keyframes move {
+                                    0% {
+                                        transform: skew(3deg) translateY(0);
+                                    }
+
+                                    25% {
+                                        transform: skew(0) translateY(3%);
+                                    }
+
+                                    75% {
+                                        transform: skew(-3deg) translateY(0);
+                                    }
+
+                                    100% {
+                                        transform: skew(0deg) translateY(0);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                p {
+                    font-size: 35px;
+                    font-weight: bold;
+                    color: $eighth_1;
+                }
+
+                &:nth-of-type(1) {
+                    div {
+                        img {
+                            top: 34px;
+                            left: 16px;
+                        }
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    div {
+                        img {
+                            top: 28px;
+                            left: 7px;
+                        }
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    div {
+                        img {
+                            top: 30px;
+                            left: 0px;
+                        }
+                    }
+                }
+
+                &:nth-of-type(4) {
+                    div {
+                        img {
+                            top: 16px;
+                            left: -31px;
+                        }
+                    }
+                }
+
+                &:nth-of-type(5) {
+                    div {
+                        img {
+                            &:nth-of-type(1) {
+                                top: 30px;
+                                left: 20px;
+                                z-index: 2;
+                            }
+
+                            &:nth-of-type(2) {
+                                top: 2px;
+                                left: -22px;
+                                z-index: 1;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-of-type(6) {
+                    div {
+                        img {
+                            top: 9px;
+                            left: -17px;
+                        }
+                    }
+                }
+
+                &:nth-of-type(7) {
+                    div {
+                        img {
+                            &:nth-of-type(1) {
+                                top: -4px;
+                                left: 64px;
+                                z-index: 2;
+                            }
+
+                            &:nth-of-type(2) {
+                                top: 9px;
+                                left: -2px;
+                                z-index: 1;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-of-type(8) {
+                    div {
+                        img {
+                            top: 30px;
+                            left: -26px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+html body header .topArea {
+    background: url("../img/header_top_bg.png") no-repeat top left;
+}
+
+// bg
+html body .bg {
+    background: url("../img/bg.png") no-repeat top left;
+    background-size: cover;
+}
+
+// swiper
+html body main .swiper-banner .swiper-wrapper .swiper-slide .img {
+    background: url("../img/banner_bg.png")no-repeat;
+    background-size: contain;
+}
+
+html body main .swiper-banner .swiper-wrapper .swiper-slide .img div.girl {
+    background: url("../img/banner_girl.png") no-repeat center;
+    background-size: contain;
+}
+
+html body main .swiper-banner .swiper-wrapper .swiper-slide .img div.poker {
+    background: url("../img/banner_poker.png") no-repeat center;
+    background-size: contain;
+}
+
+html body main .swiper-banner .swiper-wrapper .swiper-slide .img div.slogan {
+    background: url("../img/banner_slogan.png") no-repeat center;
+    background-size: contain;
+}
+
+html body main .swiper-banner .swiper-wrapper .swiper-slide .img div.money_left {
+    background: url("../img/banner_moeny_left.png") no-repeat center;
+    background-size: contain;
+}
+
+html body main .swiper-banner .swiper-wrapper .swiper-slide .img div.money_right {
+    background: url("../img/banner_moeny_right.png") no-repeat center;
+    background-size: contain;
+}
+
+html body main .swiper-banner .swiper-wrapper .swiper-slide .img div.swirl {
+    background: url("../img/black_swirl.png") no-repeat center;
+    background-size: contain;
+}
+
+// marquee
+html body main .marqueeArea .marqueeTitle i {
+    background: url("../img/marquee_speaker.png") no-repeat center;
+    background-size: contain;
+}
+
+html body main .gridArea ul li .gameSelect {
+    background: url("../img/public_grid.png") no-repeat center;
+    background-size: contain;
+}
+
+// aside
+html body aside .toTop i {
+    background: url("../img/aside_i.png") no-repeat center;
+    background-size: contain;
+}
+html body aside .download_ic i{
+    background: url("../img/download_i.png") no-repeat center;
+    background-size: contain;
+}
